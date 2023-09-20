@@ -8,3 +8,4 @@ authors = ["Tom Sorabella <tsorabel@gmail.com>"]
 
 [dependencies]
 obj_parser = { path = "./obj_parser"}
+glfw = "*"

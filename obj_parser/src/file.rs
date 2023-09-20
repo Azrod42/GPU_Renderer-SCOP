@@ -1,14 +1,8 @@
-pub fn readfile(left: usize, right: usize) -> usize {
-    left + right
-}
+use std::fs;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = readfile(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn read_file(path: &String) -> String {
+    fs::read_to_string(path).unwrap_or_else(|_| {
+        println!("Error: impossilbe to read file");
+        std::process::exit(1);
+    })
 }
